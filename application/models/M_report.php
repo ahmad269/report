@@ -10,7 +10,7 @@ class M_report extends CI_Model
     
     public function tampil_w($date1, $date2)
     {
-        // $query = null;
+        // testing saja, buat masuk di github
 
         if (!empty($date1) && !empty($date2)){
             $query = $this->db->query("SELECT * FROM tbl_report WHERE date BETWEEN '$date1' AND '$date2'");

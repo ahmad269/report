@@ -1,0 +1,44 @@
+model
+public function jumlah_ur()
+    {
+        $query = $this->db->get_where('tbl_report', array('eqp' => 'UR'));
+
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
+    }
+	
+	
+	
+	public function jumlah_user()
+    {
+        $query = $this->db->get('akun_user');
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
+		
+		controller
+		'total_user'    => $this->M_report->jumlah_user(),
+		
+		view
+		
+		<div class="col-lg-3 col-6">
+                              <!-- small box -->
+                              <div class="small-box bg-success">
+                                  <div class="inner">
+                                      <h3><?= $total_user ?></h3>
+
+                                      <p>Data User</p>
+                                  </div>
+                                  <div class="icon">
+                                      <i class="fa fa-users"></i>
+
+                                  </div>
+                                  <a href="<?= base_url('data_user') ?>" class="small-box-footer">Info Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+                              </div>
+                          </div>
+   
